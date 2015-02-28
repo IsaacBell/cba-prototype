@@ -1,0 +1,225 @@
+/*===================================================================================================
+ Animations & Transitions
+===================================================================================================*/
+
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+// Bounce In
+//-----------------------------------------
+@include keyframes(bounceIn) {
+  0% {
+    @include opacity(0);
+    @include transform( scale(.3) );
+  }
+
+  50% {
+    @include opacity(1);
+    @include transform( scale(1.05) );
+  }
+
+  70% {
+    @include transform( scale(.9) );
+  }
+
+  100% {
+    @include opacity(1);
+    @include transform( scale(1) );
+  }
+}
+
+.bounce-in, .fader {
+  @include animation(bounceIn);
+  opacity: 1 !important;    
+}
+//-----------------------------------------
+
+// Bounce In Left
+//-----------------------------------------
+@include keyframes(bounceInLeft) {
+  0% {
+    @include opacity(0);
+    @include transform( translateX(-2000px) );
+  }
+
+  60% {
+    @include opacity(1);
+    @include transform( translateX(30px) );
+  }
+
+  80% {
+    @include transform( translateX(-10px) );
+  }
+
+  100% {
+    @include transform( translateX(0) );
+  }
+}
+
+.bounce-in-left {
+  @include animation(bounceInLeft);
+  opacity: 1 !important;    
+}
+//-----------------------------------------
+
+// Bounce In Up
+//-----------------------------------------
+@include keyframes(bounceInUp) {
+  0% {
+    @include opacity(0);
+    @include transform( translateY(2000px) );
+  }
+
+  60% {
+    @include opacity(1);
+    @include transform( translateY(-30px) );
+  }
+
+  80% {
+    @include transform( translateY(10px) );
+  }
+
+  100% {
+    @include transform( translateY(0) );
+  }
+}
+
+
+
+.bounce-in-up {
+  @include animation(bounceInUp);
+  opacity: 1 !important;
+}
+//-----------------------------------------
+
+// Bounce In Right
+//-----------------------------------------
+@include keyframes(bounceInRight) {
+  0% {
+    @include opacity(0);
+    @include transform( translateX(2000px) );
+  }
+
+  60% {
+    @include opacity(1);
+    @include transform( translateX(-30px) );
+  }
+
+  80% {
+    @include transform( translateX(10px) );
+  }
+
+  100% {
+    @include transform( translateX(0) );
+  }
+}
+
+.bounce-in-right {
+  @include animation(bounceInRight);
+  opacity: 1!important;
+}
+//-----------------------------------------
+
+// Icon Slides - Use to slide an icon slightly on hover
+//-----------------------------------------
+@include keyframes(iconSlideRight) {
+  0% {
+    width: 20px;
+  }
+  50% {
+    width: 300px;
+  }
+  100% {
+    width: 20px;
+  }
+}
+@include keyframes(iconSlideLeft) {
+  0% {
+    width: 20px;
+  }
+  50% {
+    width: 300px;
+  }
+  100% {
+    width: 20px;
+  }
+}
+.icon-slide-left {
+  @include animation(iconSlideLeft);
+  opacity: 1 !important;
+}
+//-----------------------------------------
+
+// Post Navigation Animations - Use after another animation is completed
+//-----------------------------------------
+@keyframes postNavImg {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes postNavImg {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.post-nav-img {
+  @include animation(postNavImg);
+  opacity: 1 !important;
+}
+//-----------------------------------------
+
+//  Slide Up/Down - Use with viewport-height div containers
+// TODO: Keep or remove?
+//-----------------------------------------
+@keyframes slideDown{
+  0% { 
+    @include transform( translateY(-100vh) ); 
+    @include opacity(0);
+  }
+  100% { 
+    @include transform( translateY(0px) );  
+    @include opacity(1);
+  }
+}
+@keyframes slideUp{
+  0% { 
+    @include transform( translateY(100vh) ); 
+    @include opacity(0);
+  }
+  100% { 
+    @include transform( translateY(0px) );  
+    @include opacity(1);
+  }
+}
+.slide-down {
+  @include animation(slideDown);
+  opacity: 1 !important;
+}
+.slide-up {
+  @include animation(slideUp);
+  opacity: 1 !important;
+}
+//-----------------------------------------
+
+
+

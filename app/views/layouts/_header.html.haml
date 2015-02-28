@@ -1,0 +1,51 @@
+/ Header
+%header#sticky-header
+  %nav.uk-navbar
+    %a#brand.uk-float-left.uk-navbar-brand{:href => "/"}
+      %img{src: asset_path("main-logo.png")}
+    %a#ua-logo.uk-navbar-content.uk-float-right.uk-hidden-small.uk-hidden-medium
+      %img{src: asset_path("ua.png")}
+    %a.uk-navbar-content.uk-float-right.uk-hidden-large{href: "#offcanvas", "data-uk-offcanvas" => true}
+      %i.uk-icon-hover.uk-icon-reorder
+    .uk-navbar-content.uk-navbar-center.uk-hidden-small.uk-hidden-medium
+      / TODO - Javascript: Active tabs with 'uk-navbar-attached'
+      %a.uk-navbar-link{href: '#majors'}
+        UNDERGRADUATE
+      %a.uk-navbar-link{href: '#graduate'}
+        GRADUATE
+      %a.uk-navbar-link{href: '#dept'}
+        DEPARTMENTS     
+      %a.uk-navbar-link{href: '#about'}
+        ABOUT     
+      %a.uk-navbar-link{href: '#alumni'}
+        ALUMNI     
+      %a.uk-navbar-link{href: '#students'}
+        STUDENTS     
+      %a.uk-navbar-link{href: '#faculty'}
+        FACULTY
+/ Off-canvas sidebar
+#offcanvas.uk-offcanvas
+  .uk-offcanvas-bar.uk-offcanvas-bar-flip
+    %ul.uk-nav.uk-nav-offcanvas{"data-uk-nav" => true}
+      / TODO - Javascript: Active tabs with 'uk-navbar-attached'
+      %li
+        %a.uk-navbar-link{href: '#majors'}
+          UNDERGRADUATE
+      %li
+        %a.uk-navbar-link{href: '#graduate'}
+          GRADUATE
+      %li
+        %a.uk-navbar-link{href: '#majors'}
+          DEPARTMENTS     
+      %li
+        %a.uk-navbar-link{href: '#majors'}
+          ABOUT     
+      %li
+        %a.uk-navbar-link{href: '#majors'}
+          ALUMNI     
+      %li
+        %a.uk-navbar-link{href: '#majors'}
+          STUDENTS     
+      %li
+        %a.uk-navbar-link{href: '#majors'}
+          FACULTY

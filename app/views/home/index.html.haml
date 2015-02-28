@@ -1,0 +1,259 @@
+#content.container{:role => "main"}
+  / Hero Unit
+  #hero.intro.animated
+    / %img.intro_image{src: asset_path("hero.jpg")}
+    .intro_content
+      = render 'layouts/header'
+  / Toggleable Container
+  / TODO: Re-write using a responsive table instead of a grid?
+  .switch-container
+    #majors.switcheable-content.uk-cover-background.uk-hidden.animated.post-nav-img
+      .uk-container.uk-container-center.uk-margin-top.uk-margin-large-bottom
+        .homeWindow{ "data-uk-grid" => true, "data-uk-grid-match" => true }
+          %h1.uk-heading-large Undergraduate Majors
+          .uk-grid.uk-grid-divider
+            .uk-width-large-1-4.uk-width-medium-1-4.uk-width-small-1-1
+              %p 
+                A major is your main course of study toward an
+                undergraduate degree at Culverhouse. Our five 
+                academic departments offer eight majors to choose
+                from. 
+              %p 
+                Gratuitous filler text. Lorem ipsum dolor sit amet, 
+                consectetur adipiscing elit. Integer nec odio. Praesent 
+                libero. Sed cursus ante dapibus diam. Sed nisi. Nulla 
+                quis sem at nibh elementum imperdiet. Duis sagittis 
+                ipsum. Praesent mauris. 
+              %p Class aptent taciti sociosqu ad litora torquent.
+            .uk-width-large-1-4.uk-width-medium-1-4.uk-width-small-1-1
+              %ul.uk-nav
+                %li
+                  %a.uk-active
+                    %h1.uk-nav-sub ACCOUNTING
+                %li
+                  %a
+                    %h1 ECONOMICS
+                %li
+                  %a
+                    %h1 FINANCE
+                %li
+                  %a
+                    %h1 GENERAL BUSINESS
+                %li
+                  %a
+                    %h1 MANAGEMENT INFO SYSTEMS
+                %li
+                  %a
+                    %h1 OPERATIONS MANAGEMENT
+                %li
+                  %a
+                    %h1 MARKETING
+                %li
+                  %a
+                    %h1 MANAGEMENT
+            .uk-width-large-1-4.uk-width-medium-1-4.uk-width-small-1-1
+              / .uk-width-large-1-4.uk-width-medium-1-4.uk-width-small-1-1.uk-invisible
+              %h2
+                %strong WHERE BUSINESS MEETS TECHNOLOGY
+              %p 
+                The Management Information Systems Program 
+                combines a strong business curriculum with the 
+                experience and technical skills needed to compete 
+                in today's information-based society. 
+              %p
+                Three of the five fastest-growing occupations in the 
+                U.S. require a deep understanding of business needs 
+                coupled with technical knowledge to help organizations 
+                succeed and grow.
+            .uk-width-large-1-4.uk-width-medium-1-4.uk-width-small-1-1
+              / .uk-width-large-1-4.uk-width-medium-1-4.uk-width-small-1-1.uk-invisible
+              %img.uk-float-left{src: asset_path("placeholder-news.png")}
+              %p.sub-lead UA MIS Ranked 4th Among Publics by US NEWS
+              %hr
+              %p.uk-float-right
+                %strong
+                  MIS ranked 4th among publics by US 
+                  News & World Report. Blah blah blah.
+    #graduate.switcheable-content.uk-cover-background.uk-hidden.animated.post-nav-img
+      .uk-container.uk-container-center.uk-margin-top.uk-margin-large-bottom
+        .homeWindow{ "data-uk-grid" => true, "data-uk-grid-match" => true }
+          %h1.uk-heading-large Manderson Graduate Program
+          .uk-grid.uk-grid-divider
+            .uk-width-large-1-4.uk-width-medium-1-4.uk-width-small-1-1
+              %h1
+                Specialized Masters
+              %p
+                Students graduating from the master's programs are 
+                more prepared and more able to stand out in an 
+                increasingly crowded workforce. 
+
+                Manderson programs cover several disciplines from our
+                academic departments and develop professionals
+                ready for bigger responsibility and higher compensation
+                in the job market. Some programs are available online. 
+
+                See how a Masters degree from The University of 
+                Alabama can change your life.
+              %a 
+                %p View Our Specialized Master's Program
+            .uk-width-large-1-4.uk-width-medium-1-4.uk-width-small-1-1
+              %h1 MBA
+              %p
+                The MBA is a keystone of building an exceptional 
+                career. Our MBA Program is committed to crafting
+                ethical business leaders who will make a positive
+                impact on their company&#8217;s bottom line and their 
+                communities.
+
+                In 2014, our MBA program was ranked #1 in Forbes&#8217;
+                rankings of &#8216;overperforming&#8217; MBA programs by delivering
+                a powerful return on investment and a 99% placement
+                rate for graduates. The MBA Programs is also home to our 
+                innovative STEM Path to the MBA.
+              %a 
+                %p LEARN MORE ABOUT THE CULVERHOUSE MBA
+            .uk-width-large-1-4.uk-width-medium-1-4.uk-width-small-1-1
+              %h1 EXECUTIVE MBA (EMBA)
+              %p 
+                Culverhouse realizes that today&#8217;s business professionals 
+                pursuing an MBA must juggle family and an ever-growing 
+                work schedule. The EMBA at UA now offers two convenient 
+                formats for managers: An every other weekend face-to-face 
+                format and a once-a-month blended in class/online format. 
+
+                Our EMBA Program offers the flexibility of pursuing the
+                degree at our Tuscaloosa or Huntsville campuses.
+
+                The Culverhouse EMBA boasts a relevant curriculum,
+                a distinguished faculty and an incomparable return on 
+                investment (ROI).
+              %a{href: '#'}
+                %p LEARN MORE ABOUT THE EXECUTIVE MBA
+            .uk-width-large-1-4.uk-width-medium-1-4.uk-width-small-1-1
+              %h1 PH.D PROGRAMS
+              %p
+                The Culverhouse PHD Program is training the best of tomorrow's leaders and thinkers 
+                today. This is more than a place of learning -- it is a 
+                place of ideas and innovation. 
+
+                By promoting independence of thought and a 
+                rigorous academic curriculum, it's no wonder that 
+                Culverhouse's Ph.D. programs are among the best in 
+                the country and among the oldest in the south.
+
+                Our renowned faculty and state-of-the-art programs 
+                produce dissertations and academics who are 
+                recognized internationally as thought leaders.
+              %a{href: '#'}
+                %p LEARN MORE ABOUT OUR PH.D PROGRAMS
+    #dept.switcheable-content.uk-cover-background.uk-hidden.animated.post-nav-img
+      .uk-container.uk-container-center.uk-margin-top.uk-margin-large-bottom
+        .homeWindow{ "data-uk-grid" => true, "data-uk-grid-match" => true }
+          %h1.uk-heading-large Deparments
+          .uk-grid.uk-grid-divider
+            .uk-width-large-1-5.uk-width-medium-1-5.uk-width-small-1-1
+              .uk-width-1-of-1
+                %img{src: asset_path("dept-placeholder.png")}
+              .uk-width-1-of-1
+                %h2 The Culverhouse School Of Accountancy
+              .uk-width-1-of-1
+                %p Public Accounting Report ranks The Culverhouse School of Accountancy at 8th in the nation.
+              .uk-width-1-of-1
+                %a{href: "#"}
+                  %p
+                    CONTINUE TO ACCOUNTANCY
+            .uk-width-large-1-5.uk-width-medium-1-5.uk-width-small-1-1
+              .uk-width-1-of-1
+                %img{src: asset_path("dept-placeholder.png")}
+              .uk-width-1-of-1
+                %h2 ECONOMICS, FINANCE AND LEGAL STUDIES
+              .uk-width-1-of-1
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero architecto, quasi corporis facere harum sit ratione iste quam enim qui! Sequi temporibus nemo maiores nisi molestias ipsam laboriosam, aut. Dignissimos.
+              .uk-width-1-of-1
+                %a{href: "#"}
+                  %p 
+                    EFLS Descriptinve text.
+            .uk-width-large-1-5.uk-width-medium-1-5.uk-width-small-1-1
+              .uk-width-1-of-1
+                %img{src: asset_path("dept-placeholder.png")}
+              .uk-width-1-of-1
+                %h2 Management Information Systems
+              .uk-width-1-of-1
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum delectus consequatur adipisci maxime, officia molestias blanditiis quos magni eligendi ratione? Dolore corrupti eos explicabo, maiores deserunt consequatur debitis nemo illum.
+              .uk-width-1-of-1
+                %a{href: "#"} 
+                  %p 
+                    MIS Descriptive text.
+            .uk-width-large-1-5.uk-width-medium-1-5.uk-width-small-1-1
+              .uk-width-1-of-1
+                %img{src: asset_path("dept-placeholder.png")}
+              .uk-width-1-of-1
+                %h2 Management
+              .uk-width-1-of-1
+                %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut amet repellat minus odit iste culpa iure error, perferendis deserunt doloremque quae cum mollitia rem cumque vero! Eum, provident alias deleniti.
+              .uk-width-1-of-1
+                %a{href: "#"} 
+                  %p 
+                    MGT Descriptive text.
+            .uk-width-large-1-5.uk-width-medium-1-5.uk-width-small-1-1
+              .uk-width-1-of-1
+                %img{src: asset_path("dept-placeholder.png")}
+              .uk-width-1-of-1
+                %h2 Marketing
+              .uk-width-1-of-1
+                %a{href: "#"} 
+                  %p
+                    Dynamic, technology driven programs for tomorrow's global marketplace.
+    #about.switcheable-content.uk-cover-background.uk-hidden.animated.post-nav-img
+      .uk-container.uk-container-center.uk-margin-top.uk-margin-large-bottom
+        .homeWindow{ "data-uk-grid" => true, "data-uk-grid-match" => true }
+          %h1.uk-heading-large ABOUT US
+          .uk-grid.uk-grid-divider
+            .uk-width-large-1-2.uk-width-medium-1-2.uk-width-small-1-1
+              %h2 INNOVATION. RIGOR. RELEVANCE.
+              %p
+                The mission of the oldest business school in Alabama is to provide its students an education they can use in the 
+                business environment of tomorrow. Everything at Culverhouse is strategically designed to develop tomorrow&#8217;s 
+                professionals: a strong curriculum, state-of-the-art facilities, top scholars and researchers, unique learning opportunities, 
+                and partnerships with local and national companies.
+              %p
+                Along with a strong classroom experience, several student and professional organizations and societies offer outstanding 
+                outside-the-classroom instruction and opportunities for students to develop the problem-solving, communication and 
+                leadership skills demanded by employers of tomorrow.
+              %p
+                The College of Commerce and Business Administration has been continuously accredited by AACSB International since 
+                1929. The Culverhouse School of Accountancy holds specialized AACSB accreditation.AACSB accreditation is the 
+                benchmark of quality worldwide and is most widely sought after by business schools. Less than five percent of 
+                institutions worldwide have earned the achievement.
+              %a
+                %p TAKE OUR ONLINE CAMPUS TOUR
+              
+            .uk-width-large-1-2.uk-width-medium-1-2.uk-width-small-1-1
+              %h2 DEAN J. MICHAEL HARDIN
+              %p
+                When Dr. Michael Hardin was appointed dean at Culverhouse 
+                in August 2011, he found himself facing the same problems that CEOs all over the world are now dealing with: a dated brand identity and an inefficient website structure. Defining the new Culverhouse identity meant repurposing its form to follow the high standards and functionality of our academic programs and experienced, well-respected faculty, as well as the business world of today.
+              %p
+                Hardin&#8217;s five-year goal for the college hinges on bringing Culverhouse into the top 25 public business schools in the nation and across the world by preparing students for a global economy.
+              %p
+                The bar is being raised, and Hardin&#8217;s Culverhouse is becoming a formidable force in 21st century business education. Hardin's full profile can be viewed here.
+              %p
+                Contact Dr. Hardin by mail by using this address:
+              %p
+                J. Michael Hardin, Ph.D.
+                Dean and Professor of Statistics
+                Culverhouse College of Commerce
+                The University of Alabama
+                Box 870223
+                Tuscaloosa, AL 35487-0223
+                Phone: (205) 348-8901
+    = render 'layouts/footer'
+
+
+            
+
+              
+            
+
+
+

@@ -1,0 +1,15 @@
+/*===================================================================================================
+ Color Palette
+===================================================================================================*/
+
+.sepia {
+	@include image-sepia;
+}
+
+// WIP: Re-write using mixins
+
+// Background color
+@mixin bg-gradient{
+	@include filter-gradient(#ead788, #ecd062, vertical); // IE6-9
+	@include background-image(radial-gradient(top, #f0ebd6 85%, #e6dca9 125%, #ecc062 125%));
+}

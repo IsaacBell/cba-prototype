@@ -1,0 +1,40 @@
+/* Baseline Text Styes */
+
+// Top-Level Head
+h1 {
+	// font-style:
+	font-size: 30px;
+
+	&.expand {
+		font-size: 48px;
+	}
+}
+// Section Head
+h3 {
+	// font-style:
+	font-size: 21px;
+
+	&.expand {
+		font-size: 24px;
+	}
+}
+// Article Head
+h4 {
+	font-size: 17px;
+
+	&.expand {
+		font-size: 30px;
+	}
+}
+// Paragraph Elements
+p {
+	font-size: 15px;
+
+	&.expand {
+		font-size: 24px;
+	}
+}
+
+
+// Font imports
+
