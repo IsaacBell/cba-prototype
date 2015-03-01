@@ -3,6 +3,8 @@ $(document).ready ->
   slideContent = ->
     $slideTriggers = $('.uk-navbar-link')
 
+    # Swap out the (top) hero unit and the (bottom) content 
+    # container, or swap out content containers
     $slideTriggers.on('click', (e) ->
       $ctr = $('.container')
       $cnt = $('.switcheable-content')
@@ -20,23 +22,23 @@ $(document).ready ->
       e.preventDefault()
     )
 
+  # Prevent scrolling
   noScroll = ->
-    # Prevents scrolling
+    # Just reset the scroll position to the top
     $('window').ScrollTo(0,0)
-    # reset scrolling position
     $('body').scrollTop = 0
     $('document').scrollTop = 0
     false
 
   # Initialize sliding UI
-  slideContent()
+  slideContent
 
-  # Disable scrolling
+  # Disable scrolling while the hero unit is up, listens for scroll event
   $('.switcheable-content').on('scroll', noScroll)
 
   # Initialize UI Kit Components
   grid = UIkit.grid( $('.homeWindow') ) if $('.homeWindow').length
-  sticky = UIkit.sticky($('#sticky-header'), {})
+  
 
 
 

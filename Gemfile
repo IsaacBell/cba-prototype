@@ -42,7 +42,7 @@ group :development do
 	gem 'brakeman'
 	gem 'guard'
 	gem 'guard-rails'
-	gem 'guard-sass'
+	gem 'guard-sass', '>= 1.0.0', :require => false
 	gem 'guard-coffeescript'
 	gem 'guard-jammit'
 	gem 'guard-livereload'

@@ -1,3 +1,5 @@
+# Note: You can work with raw Javascript by using backticks ``
+
 describe 'Example', ->
 	sample_data = [
 		{ name: "Example1", lat: '33.209841', lon: '-87.569173' },
@@ -10,8 +12,8 @@ describe 'Example', ->
 		# Delete example
 	describe 'Working With Geolocation', ->
 		it 'can locate itself', ->
-			# 
-		it 'can place a marker on the map'
-			# 
+			# Example Javascript code
+		it 'can place an element on Google Maps'
+			# Example Javascript code
 
 

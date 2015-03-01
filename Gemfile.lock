@@ -270,7 +270,7 @@ DEPENDENCIES
   guard-livereload
   guard-rails
   guard-rspec
-  guard-sass
+  guard-sass (>= 1.0.0)
   haml
   jasmine-rails
   jquery-rails
