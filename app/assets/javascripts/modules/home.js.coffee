@@ -7,6 +7,7 @@ class @Homepage
   slideTriggers = null
 
   constructor: ->
+    init = @
     # Initialize UI Kit Components
     @grid = UIkit.grid( $('.homeWindow') ) if $('.homeWindow').length
     # Disable scrolling while the hero unit is up, listens for scroll event
@@ -16,23 +17,29 @@ class @Homepage
     @slideTriggers = $('.uk-navbar-link')
     # Swap out the (top) hero unit and the (bottom) content 
     # container, or swap out content containers on click
+    @slideTriggers.on 'click', (e) ->
+      e.preventDefault()
+      init.slide e.target
+      return
     return
 
   slide: (trigger) ->
-    console.log trigger
+    # console.log trigger
+    $nav   = $('.uk-navbar')
     $ctr   = $('.container')
     $cnt   = $('.switcheable-content')
     $sld   = $('.slide')
     target = $( trigger.getAttribute('href') )
 
-    if $ctr.length and $sld.length
-      if target.hasClass('uk-hidden')
+    if $ctr.length and $sld.length # If a slide unit is open
+      if target.hasClass('uk-hidden') # Are we opening the target slide?
         $sld.addClass('uk-hidden').removeClass('slide')
         target.removeClass('uk-hidden').addClass('slide')
-      else if target.hasClass('slide')
+      else if target.hasClass('slide') # Or are we closing the target slide?
         $ctr.first().removeClass('container--open')
         target.removeClass('slide').addClass('uk-hidden')
-    else
+        $nav.css(bottom: 0)
+    else # If the hero unit unit is open
       $ctr.first().addClass('container--open')
       target.removeClass('uk-hidden').addClass('slide')
     
@@ -47,10 +54,6 @@ class @Homepage
 
 # Initialize
 @home = new Homepage()
-home.slideTriggers.on 'click', (e) ->
-  e.preventDefault()
-  home.slide(@)
-  return
 
 
 

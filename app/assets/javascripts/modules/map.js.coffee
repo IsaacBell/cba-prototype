@@ -1,10 +1,10 @@
-# WIP
+# WIP, may end up being useful
 class @Map
   map         = null
   marker      = null
   markers     = null
   infoWindow  = null
-  element     = null
+  # element     = null
   url         = null
   size        = null
   zoomLevel   = null
@@ -28,7 +28,7 @@ class @Map
         google.maps.event.addListener marker, 'click', showMarker
 
   showMarker: (marker) ->
-  # Needs cleaning
+  # TODO: Needs cleaning
     if marker
       # get marker detail information from server
       $.get dataRoot + 'data/' + marker.id + '.html', (data) ->
@@ -40,10 +40,10 @@ class @Map
       alert 'Error marker not found: ' + markerId
 
   constructor: ->
-    element   = $(@).get(0)
-    url       = $(@).data('url')
-    size      = $(@).data('size')
-    zoomLevel = $(@).data('zoom') || 8
+    # element   = $(@).get(0)
+    @url       = $(@).data('url')
+    @size      = $(@).data('size')
+    @zoomLevel = $(@).data('zoom') || 8
     
     if @size
       [width, height] = size.split('x')
@@ -67,10 +67,9 @@ class @Map
           center: latlng
           mapTypeId: google.maps.MapTypeId.ROADMAP
    
-        map = new google.maps.Map(element, mapOptions)
+        map = new google.maps.Map($(@), mapOptions)
         infoWindow = new google.maps.InfoWindow()
         if url then createMarkers(url) else createMarkers()
-    $(element).show() # Time to re-show the element
-
-init()
+    $(@).show() # Time to re-show the element
   
+

@@ -14,20 +14,20 @@
 @import "blueprint";
 
 /* Base -- Utility Library, re-usable */
-@import "base/base"; 				// Resets, normalization, etc
+@import "base/base"; 			// Resets, normalization, etc
 @import "base/utility"; 		// Functions, mixins, fallbacks
 @import "base/palette"; 		// Currently unused
-@import "base/typography"; 	// TODO: Need fonts
+@import "base/typography"; 		// TODO: Need fonts
 @import "base/print";
 @import "base/animations";  
 
 /* Layout -- Site-wide styles */
 @import "layout/header";
+@import "layout/home"; 		 	// Homepage
 // @import "layout/footer";
 
 /* Modules -- Individual/specific page & element styles */
-@import "modules/home"; 		 // Homepage
-//@import "modules/scrollbar"; 
+@import "modules/scrollbar"; 
 
 /* State -- how modules/layouts will look in a particular state */
-//@import "state/ie"; 				 // Internet Explorer fallbacks
+//@import "state/ie"; 			// Internet Explorer fallbacks
