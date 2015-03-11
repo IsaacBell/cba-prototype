@@ -18,6 +18,7 @@
 @import "base/utility"; 		// Functions, mixins, fallbacks
 @import "base/palette"; 		// Currently unused
 @import "base/typography"; 	// TODO: Need fonts
+@import "base/print";
 @import "base/animations";  
 
 /* Layout -- Site-wide styles */
@@ -26,7 +27,7 @@
 
 /* Modules -- Individual/specific page & element styles */
 @import "modules/home"; 		 // Homepage
-@import "modules/scrollbar"; 
+//@import "modules/scrollbar"; 
 
 /* State -- how modules/layouts will look in a particular state */
-@import "state/ie"; 				 // Internet Explorer fallbacks
+//@import "state/ie"; 				 // Internet Explorer fallbacks

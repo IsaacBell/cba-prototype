@@ -16,6 +16,5 @@
 //= require uikit-2.16.2/js/components/grid
 //= require uikit-2.16.2/js/components/cover
 //= require uikit-2.16.2/js/components/sticky
-//= require modules/home
 //= require config
 // require turbolinks

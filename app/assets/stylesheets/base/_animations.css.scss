@@ -3,20 +3,27 @@
 ===================================================================================================*/
 
 .animated {
-  -webkit-animation-duration: 2s;
   animation-duration: 2s;
-  -webkit-animation-fill-mode: both;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
+  
   animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
 }
 
 .animated.infinite {
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite;          /* IE 10+ */
+  -webkit-animation-iteration-count: infinite;  /* Chrome */
+  -o-animation-iteration-count: infinite;       /* Opera */
+  -moz-animation-iteration-count: infinite;     /* Firefox */
+  // animation-iteration-count: infinite;
 }
 
 .animated.hinge {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+  // 
 }
 
 // Bounce In
@@ -166,15 +173,7 @@
 
 // Post Navigation Animations - Use after another animation is completed
 //-----------------------------------------
-@keyframes postNavImg {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-@-webkit-keyframes postNavImg {
+@include keyframes(postNavImg) {
   0% {
     width: 0%;
   }
@@ -189,9 +188,8 @@
 //-----------------------------------------
 
 //  Slide Up/Down - Use with viewport-height div containers
-// TODO: Keep or remove?
 //-----------------------------------------
-@keyframes slideDown{
+@include keyframes(slideDown){
   0% { 
     @include transform( translateY(-100vh) ); 
     @include opacity(0);
@@ -201,7 +199,7 @@
     @include opacity(1);
   }
 }
-@keyframes slideUp{
+@include keyframes(slideUp){
   0% { 
     @include transform( translateY(100vh) ); 
     @include opacity(0);

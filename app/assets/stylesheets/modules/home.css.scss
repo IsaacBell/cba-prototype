@@ -12,6 +12,7 @@
   @include transition-timing-function(ease-in-out);
   @include transition(moveDown 1s ease-in-out 2s backwards);
   @include line-height (12);
+  // will-change: transform;
   background-attachment: fixed;
   width: 100%;
   height: 95vh;
@@ -94,7 +95,7 @@
   background: image-url('hero.jpg');
   width: 100%;
   height: 100%;
-  height: 100vh;
+  height: 95vh;
   overflow: hidden;
   position: fixed;
   @include pixelate-media;

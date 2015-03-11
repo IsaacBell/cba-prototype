@@ -1,22 +1,15 @@
 # WIP
-$.fn.initMap = ->
-  # Example Usage:
-  # 
-  # <div id="map" width="400" height="400" url="/myJsonData.json" address="225 S Anywhere, Montgomery, Alabama, 23145"> </div>
-  # <script type="text/javascript">
-  #   $('#map').initMap();
-  # </script>
-
+class @Map
   map         = null
   marker      = null
   markers     = null
   infoWindow  = null
-  element     = $(@).get(0)
-  url         = $(@).data('url')
-  size        = $(@).data('size')
-  zoomLevel   = $(@).data('zoom') || 8
+  element     = null
+  url         = null
+  size        = null
+  zoomLevel   = null
 
-  createMarkers = ->
+  createMarkers: ->
     if !url
       return marker = new google.maps.Marker
         position: latlng # Set a marker at the center address
@@ -34,7 +27,7 @@ $.fn.initMap = ->
           # icon: 
         google.maps.event.addListener marker, 'click', showMarker
 
-  showMarker = (marker) ->
+  showMarker: (marker) ->
   # Needs cleaning
     if marker
       # get marker detail information from server
@@ -46,8 +39,13 @@ $.fn.initMap = ->
     else
       alert 'Error marker not found: ' + markerId
 
-  init = ->
-    if size
+  constructor: ->
+    element   = $(@).get(0)
+    url       = $(@).data('url')
+    size      = $(@).data('size')
+    zoomLevel = $(@).data('zoom') || 8
+    
+    if @size
       [width, height] = size.split('x')
       $(@).css({width: Number(width), height: Number(height), background: '#fff'})
    
