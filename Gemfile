@@ -4,7 +4,7 @@ gem 'rails', '4.1.6'
 # Base
 #================================
 gem 'sqlite3' # temp
-gem 'puma' # temp
+gem 'puma' 	  # temp
 #================================
 
 # Utilities
@@ -59,8 +59,7 @@ group :development, :test do
   gem 'guard-rspec'
 end
 
-group :production do
-	gem 'rails_12factor'
-end
+# group :production do
+# end
 
 
