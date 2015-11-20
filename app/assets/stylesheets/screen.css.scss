@@ -7,11 +7,21 @@
  	* 
  	*/ 
 
-/* Compass & Blueprint -- CSS library authoring tools */
+/* Compass & Blueprint ---- CSS library authoring tools */
 @import "compass";
 @import "compass/reset";
 @import "compass/utilities";
+
+/* Blueprint */
 @import "blueprint";
+/*
+//
+//
+//
+//
+//
+// ----------------------------------------------------------------------
+*/
 
 /* Base -- Utility Library, re-usable */
 @import "base/base"; 			// Resets, normalization, etc

@@ -7,9 +7,10 @@ gem 'sqlite3' # temp
 gem 'puma' 	  # temp
 #================================
 
-# Utilities
+# Utilities & APIs
 #================================
 gem 'spork'
+gem 'twitter'
 #================================
 
 # Documentation
@@ -44,7 +45,6 @@ group :development do
 	gem 'guard-rails'
 	gem 'guard-sass', '>= 1.0.0', :require => false
 	gem 'guard-coffeescript'
-	gem 'guard-jammit'
 	gem 'guard-livereload'
 end
 
