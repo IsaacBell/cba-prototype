@@ -1,0 +1,56 @@
+header {
+  z-index: 99;
+  nav.uk-navbar {
+    position: fixed !important;
+    bottom: 0;
+    width: 100% !important;
+    a.uk-navbar-link {
+      width: 40.3%;
+      height: 0.3%;
+      color: #ffffff;
+      font: 700 15px DINAlternate;
+      text-decoration: none;
+      margin: auto 0.9%;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    #brand {
+      @include breakpoint(380, max-width) {
+        width: 80%;
+      }
+      @include breakpoint(479, max-width) {
+        margin-top: 2.5%;
+        width: 90%;
+      }
+      height: auto;
+      padding-top: 0.65%;
+      img {
+        height: 2em;
+      }
+    }
+    .uk-navbar-center {
+      margin-right: 33%;
+      @include breakpoint(1610, max-width) {
+        display: none;
+        visibility: hidden;
+      }
+    }
+    #ua-logo {
+      width: auto;
+      height: 100%;
+      img {
+        height: 4em;
+        font-weight: 100%;
+        float: right;
+        padding-right: 2px;
+      }
+    }
+  }
+}
+
+#sticky-header {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,0 +1,203 @@
+/* Utilities
+ ************************ 
+ *::Clearfix
+ *::Opacity
+ *::Scrollbar Styles
+ *::Line Height
+ *::Visual Media
+ *::Hardware Acceleration
+ *::Accessibility Styles
+ *::Breakpoints
+ *::Unit Conversions
+ *::Border Radius
+ *::Animation
+ ************************/
+
+/** Clearfix
+    Option 1: HTML class
+    Option 2: Declare with SASS instead
+*/
+.cf:before,.cf:after {content: " "; /* 1 */    display: table; /* 2 */}
+.cf:after {clear: both;}
+.cf {clear: both;}
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/** Cross browser fallback down to IE5 */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Remove the scrollbar
+@mixin no-scrollbar {
+  overflow-y: hidden;
+  -ms-overflow-style: none !important; // Hide scrollbars in IE 10+
+}
+
+/** Sets the line height in rem's with a px fallback. */
+@mixin line-height($heightValue: 12 ){
+	line-height: $heightValue + px; //fallback for old browsers
+	line-height: (0.125 * $heightValue) + rem;
+}
+
+/** Create smoother animations */
+@mixin enable-hardware-acceleration {
+  -webkit-transform:translate3d(0,0,0);
+}
+
+// Visual Media =============================================================
+/**************************************************************************** 
+Example:
+  // Optimize scaling to avoid blurry edges
+  img[src=".gif"], img[src=".png"]{
+    @include optimize-media-crispness;
+  }
+  
+  https://developer.mozilla.org/en/CSS/image-rendering
+*/
+
+
+/**  Image Sharpness */
+@mixin optimize-media-crispness {
+  image-rendering:auto;                      /* Legal fallback */
+  image-rendering:-moz-crisp-edges;          /* Firefox        */
+  image-rendering:-o-crisp-edges;            /* Opera          */
+  image-rendering:-webkit-optimize-contrast; /* Webkit         */
+  image-rendering:optimize-contrast;         /* CSS4 Proposed  */
+  -ms-interpolation-mode:bicubic;            /* IE 7 & 8       */
+}
+
+/** Pixelate images during scaling (does this pixelate video too?) */
+@mixin pixelate-media {
+  image-rendering:auto;                      /* Legal fallback */
+  image-rendering:-moz-crisp-edges;          /* Firefox        */
+  image-rendering:-o-crisp-edges;            /* Opera          */
+  image-rendering:-webkit-optimize-contrast; /* Webkit         */
+  image-rendering:pixelated;                 /* CSS3 Proposed  */
+  -ms-interpolation-mode:nearest-neighbor;   /* IE7+           */
+  image-rendering:pixelated;                 /* CSS4 Proposed  */
+}
+
+/** Sepia filter -- Note requires the included sepia.svg filter file as a fallback */
+@mixin image-sepia {
+  // Does not work in IE 10/11 and never will
+  filter: url(components/filters.svg#sepia);       /* Legal fallback    */
+  -webkit-filter: sepia(1);                        /* Opera:            */
+  -webkit-filter: sepia(100%);                     /* Webkit            */
+  filter: sepia(100%);                             /* Firefox           */
+  filter: alpha(opacity = 50);                     /* Fake it in IE 7-9 */
+  background-color: #5E2612;                       /* ""                */
+  zoom:1;                                          /* ""                */
+}
+// =========================================================================
+
+
+// Accessibility Styles==========================================================================
+@mixin visible-screenreaders-only {
+  /** Solution from: j.mp/visuallyhidden - Thanks Jonathan Neal! */
+  position: absolute !important;    
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.sr, .sr-only {
+  @include visible-screenreaders-only;
+}
+// ==============================================================================================
+
+
+
+
+/** Breakpoints */
+@mixin breakpoint($value, $query: min-width) {
+  // Example: @include breakpoint(640, max-width)
+  @media only screen and ($query: $value) { @content; }
+  @if $query == min-width { .lt-ie9 & { @content; } }
+}
+
+/** Unit Conversions */
+@function strip-unit($number) { @return $number / ($number * 0 + 1); }
+@function px-to-em($px, $context: strip-unit($base-font-size)) { @return (strip-unit($px) / $context) * 1em; }
+@function em-to-px($em, $context: strip-unit($base-font-size)) { @return (strip-unit($em) * $context) * 1px; }
+@function px-to-percent($px, $context: em-to-px($breakpoint-bass)) { @return percentage(strip-unit($px) / strip-unit($context)); }
+@function em-to-percent($em, $context: em-to-px($breakpoint-bass)) { @return px-to-percent(em-to-px($em), $context); }
+
+/** Border Radius */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  // Stops bg color from leaking outside the border
+}
+/** Single corner border-radius styles */
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+  background-clip: padding-box;
+}
+
+
+// Animation
+// ================================================================
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }  
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }  
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation-name: #{$str};
+  -moz-animation-name: #{$str};
+  -ms-animation-name: #{$str};
+  -o-animation-name: #{$str};
+  animation-name: #{$str};      
+}
+// ================================================================
+
+
+
