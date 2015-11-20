@@ -1,0 +1,19 @@
+RSpec Documentation:
+
+
+
+Models: (/models)
+//*************************************************************************************************************
+- This folder contains a simple spec for ActionMailer messages called message_spec.rb which follows standard Rspec conventions
+//======================================================================================
+
+Mailers:
+//*************************************************************************************************************
+- I keep my mailer specs simple, mostly just making sure that the emails don't send the wrong message or send to the wrong recipient
+//======================================================================================
+
+
+Docs:
+//*************************************************************************************************************
+- Any important documentation information about the project
+//======================================================================================
