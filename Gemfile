@@ -3,7 +3,12 @@ gem 'rails', '4.1.6'
 
 # Base
 #================================
-gem 'sqlite3' # temp
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 gem 'puma' 	  # temp
 #================================
 
