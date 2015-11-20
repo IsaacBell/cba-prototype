@@ -229,3 +229,12 @@ Processing by HomeController#index as HTML
   Rendered layouts/_footer.html.haml (1.5ms)
   Rendered home/index.html.haml within layouts/application (203.0ms)
 Completed 200 OK in 771ms (Views: 770.5ms | ActiveRecord: 0.0ms)
+Initializing jasmine.yml configuration
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-20 01:42:19 -0600
+Processing by HomeController#index as HTML
+  Rendered layouts/_header.html.haml (8.9ms)
+  Rendered layouts/_footer.html.haml (1.2ms)
+  Rendered home/index.html.haml within layouts/application (144.7ms)
+Completed 200 OK in 597ms (Views: 596.2ms | ActiveRecord: 0.0ms)
